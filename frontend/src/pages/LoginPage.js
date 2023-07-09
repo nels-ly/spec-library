@@ -26,14 +26,14 @@ function LoginPage(){
                 <br></br>
                 <br></br>
                 <form onSubmit={formSubmit}>
-                    <div className="input-feild">
+                    <div className="input-div">
                         <div className="input-feild-icon"><img 
                         src={process.env.PUBLIC_URL+"/fi-rr-envelope.svg"}
                         alt="Envelope"
                         ></img>
                         </div>
                         <input
-                        className="userEmail"
+                        className="input-feild"
                         type="email"
                         name="email"
                         placeholder="Email"
@@ -41,14 +41,14 @@ function LoginPage(){
                         ></input>
                     </div>
                     <br></br>
-                    <div className="input-feild">
+                    <div className="input-div">
                         <div className="input-feild-icon"><img 
                         src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
                         alt="Envelope"
                         ></img>
                         </div>
                         <input
-                        className="userPassword"
+                        className="input-feild"
                         type="password"
                         name="password"
                         placeholder="Password"

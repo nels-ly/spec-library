@@ -30,7 +30,7 @@ line-height: normal;
 }
 
 
-.input-feild{
+.input-div{
     display: flex;
     width: 100%;
     padding: 3%;
@@ -48,7 +48,7 @@ line-height: normal;
     padding: 2%;
 }
 
-input{
+.input-feild{
     width: 100%;
     background-color: inherit;
     border: none;
