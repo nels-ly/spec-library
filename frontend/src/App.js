@@ -4,9 +4,11 @@ import { useDispatch } from "react-redux";
 
 // importing all pages 
 import LoginPage from "./pages/LoginPage";
+import LandingPage from "./pages/LandingPage";
 
 // defining endings 
 const ROOT = "/";  // Login page
+const LANDING  = "/dashboard";
 
 export let LoggedIn = true;
 
@@ -16,6 +18,8 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path={ROOT} element={<LoginPage />} />
+                <Route path={LANDING} element={<LandingPage />} />
+
             </Routes>
         </Router>
         </>

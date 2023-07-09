@@ -1,10 +1,10 @@
 import { React } from "react";
-import "./LoginPage.css"
+import "./LoginPage.css";
 //import { useNavigate } from "react-router-dom";
 //import { useDispatch } from "react-redux";
 
 
-function SignInPage(){
+function LoginPage(){
 
     const formSubmit = (event) => {
         event.preventDefault();
@@ -12,6 +12,8 @@ function SignInPage(){
             email: event.target.email.value,
             password: event.target.password.value,
         };
+
+        // process loginDetails
     }
 
     return (
@@ -78,4 +80,4 @@ function SignInPage(){
     )
 }
 
-export default SignInPage;
+export default LoginPage;
