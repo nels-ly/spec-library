@@ -1,5 +1,6 @@
 import { React } from "react";
 import "./LoginPage.css";
+import {Link} from "react-router-dom";
 //import { useNavigate } from "react-router-dom";
 //import { useDispatch } from "react-redux";
 
@@ -20,7 +21,7 @@ function LoginPage(){
         <>
         <div className="login-page">
             <div className="login-box">
-                <div className="title">Sign in To Spectrum</div>
+                <div className="title">Sign in to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
                 <br></br>
                 <br></br>
@@ -55,7 +56,7 @@ function LoginPage(){
                         ></input>
                     </div> 
                     <br></br>
-                    <div className="link"><a>Don't have an Account?</a></div>
+                    <div className="link"><Link to="/signup">Don't have an Account?</Link></div>
                     <br></br>
                     <div className="submit-button">
                     <button className="login-button" type="submit">Login</button>
