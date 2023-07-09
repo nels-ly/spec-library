@@ -6,11 +6,13 @@ import { useDispatch } from "react-redux";
 import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 import SignUpPage from "./pages/SignUpPage";
+import CoursePage from "./pages/CoursePage";
 
-// defining endings 
+// define paths 
 const ROOT = "/";  // Login page
 const LANDING  = "/dashboard";
 const SIGNUP = "/signup";
+const COURSE_PAGE = "/course";
 
 export let LoggedIn = true;
 
@@ -22,6 +24,7 @@ export default function App() {
                 <Route path={ROOT} element={<LoginPage />} />
                 <Route path={LANDING} element={<LandingPage />} />
                 <Route path={SIGNUP} element={<SignUpPage />} />
+                <Route path={COURSE_PAGE} element={<CoursePage/>}/>
             </Routes>
         </Router>
         </>
