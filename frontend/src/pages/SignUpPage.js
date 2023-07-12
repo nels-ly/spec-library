@@ -23,10 +23,8 @@ function SignUpPage(){
         <>
         <div className="login-page">
             <NavBar></NavBar>
-            <br></br>
-            <br></br>
             <div className="login-box">
-                <div className="title">Make an Account with Spectrum</div>
+                <div className="title">Sign up to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
                 <br></br>
                 <br></br>
@@ -54,9 +52,83 @@ function SignUpPage(){
                         </div>
                         <input
                         className="input-feild"
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        required
+                        ></input>
+                    </div> 
+                    <br></br>
+                    <div className="input-div">
+                        <div className="input-feild-icon"><img 
+                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        alt="Envelope"
+                        ></img>
+                        </div>
+                        <input
+                        className="input-feild"
                         type="password"
                         name="password"
                         placeholder="Password"
+                        required
+                        ></input>
+                    </div> 
+                    <br></br>
+                    <div className="input-div">
+                        <div className="input-feild-icon"><img 
+                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        alt="Envelope"
+                        ></img>
+                        </div>
+                        <input
+                        className="input-feild"
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name"
+                        required
+                        ></input>
+                    </div> 
+                    <br></br>
+                    <div className="input-div">
+                        <div className="input-feild-icon"><img 
+                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        alt="Envelope"
+                        ></img>
+                        </div>
+                        <input
+                        className="input-feild"
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name"
+                        required
+                        ></input>
+                    </div> 
+                    <br></br>
+                    <div className="input-div">
+                        <div className="input-feild-icon"><img 
+                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        alt="Envelope"
+                        ></img>
+                        </div>
+                        <input
+                        className="input-feild"
+                        type="text"
+                        name="gender"
+                        placeholder="Gender"
+                        required
+                        ></input>
+                    </div> 
+                    <br></br>
+                    <div className="input-div">
+                        <div className="input-feild-icon"><img 
+                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        alt="Envelope"
+                        ></img>
+                        </div>
+                        <input
+                        className="input-feild"
+                        type="date"
+                        name="dob"
                         required
                         ></input>
                     </div> 
@@ -67,18 +139,6 @@ function SignUpPage(){
                     <button className="login-button" type="submit">Create Account</button>
                     </div>
                 </form>
-                <br></br>
-                <div className="or-line">
-                    <div className="hr-or-line"></div>
-                    <p>or</p>
-                    <div className="hr-or-line"></div>
-                </div>
-                <br></br>
-                <div className="google-button-div">
-                <button className="google-button">
-                    <img className="google-image" src={process.env.PUBLIC_URL+"/google.png"} alt="Button Image" />
-                </button>
-                </div>
             </div>
         </div>
         
