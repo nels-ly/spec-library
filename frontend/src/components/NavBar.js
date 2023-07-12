@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 
-export default function NavBar(user_role = ""){
+export default function NavBar({user_role = ""}){
     const nav_options = [];
     if (user_role == "tutor"){
         nav_options.push("Dashboard");
@@ -13,20 +13,24 @@ export default function NavBar(user_role = ""){
         nav_options.push("Manage Courses");
         nav_options.push("Manage Users")
     }
+    // else user_role == "" means user is not logged in
 
     return (
+        <>
         <div className="nav-flex">
             <img className="nav-logo" src={process.env.PUBLIC_URL+"/Spectrum Logo.png"} alt="Spectrum Logo">
             </img>
-            <div className="nav-options">
-                {nav_options.map((option, index) => (
-                    <h4 key={index}>{option}</h4>
-                ))}
-            </div>
-            {user_role === "" && (
-                <img src=""></img>
+
+            {nav_options.map((option, index) => (
+                <div className="nav-options" key={index}>{option}</div>
+            ))}
+            {user_role !== "" && (
+                <img className="user-img" src={process.env.PUBLIC_URL+"/fi-rs-user.svg"}></img>
             )}
         </div>
-        
+        <br></br>
+        <br></br>
+        </>
     )
+        
 }
