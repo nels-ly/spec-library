@@ -46,8 +46,8 @@ function SignUpPage(){
                     <br></br>
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
-                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
-                        alt="Envelope"
+                        src={process.env.PUBLIC_URL+"/fi-rr-address-book.svg"}
+                        alt="username"
                         ></img>
                         </div>
                         <input
@@ -62,7 +62,7 @@ function SignUpPage(){
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
                         src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
-                        alt="Envelope"
+                        alt="Lock"
                         ></img>
                         </div>
                         <input
@@ -76,8 +76,8 @@ function SignUpPage(){
                     <br></br>
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
-                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
-                        alt="Envelope"
+                        src={process.env.PUBLIC_URL+"/fi-rr-address-book.svg"}
+                        alt="first name"
                         ></img>
                         </div>
                         <input
@@ -91,8 +91,8 @@ function SignUpPage(){
                     <br></br>
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
-                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
-                        alt="Envelope"
+                        src={process.env.PUBLIC_URL+"/fi-rr-address-book.svg"}
+                        alt="last name"
                         ></img>
                         </div>
                         <input
@@ -106,8 +106,8 @@ function SignUpPage(){
                     <br></br>
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
-                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
-                        alt="Envelope"
+                        src={process.env.PUBLIC_URL+"/fi-rr-address-book.svg"}
+                        alt="gender"
                         ></img>
                         </div>
                         <input
@@ -121,7 +121,7 @@ function SignUpPage(){
                     <br></br>
                     <div className="input-div">
                         <div className="input-feild-icon"><img 
-                        src={process.env.PUBLIC_URL+"/fi-rs-lock.svg"}
+                        src={process.env.PUBLIC_URL+"/fi-rr-cake-birthday.svg"}
                         alt="Envelope"
                         ></img>
                         </div>
