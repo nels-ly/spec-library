@@ -1,0 +1,9 @@
+.lesson-list-grid{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.align-grid-items{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}

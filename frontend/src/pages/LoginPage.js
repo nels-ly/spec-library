@@ -17,7 +17,7 @@ function LoginPage(){
         };
 
         // process loginDetails
-        navigate("/dashboard");
+        navigate("/dashboard", { state: { user_role: "student" } });
     }
 
     return (
