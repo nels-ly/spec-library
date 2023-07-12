@@ -23,8 +23,6 @@ function SignUpPage(){
         <>
         <div className="login-page">
             <NavBar></NavBar>
-            <br></br>
-            <br></br>
             <div className="login-box">
                 <div className="title">Make an Account with Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>

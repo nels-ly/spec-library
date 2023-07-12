@@ -24,8 +24,6 @@ function LoginPage(){
         <>
         <div className="login-page">
             <NavBar></NavBar>
-            <br></br>
-            <br></br>
             <div className="login-box">
                 <div className="title">Sign in to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
