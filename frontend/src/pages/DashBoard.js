@@ -2,10 +2,10 @@ import {React} from "react";
 import "./DashBoard.css";
 import CoursePage from "./CoursePage";
 import CourseCard from "../components/CourseCard"
+import NavBar from "../components/NavBar";
 
-
-export default function DashBoard(){
-
+export default function DashBoard({user_role="tutor"}){
+    // i set it to tutor view by default for now, but obviously will change based on user role aquired from DB.
     // get Course Details
     const tutor_course = {
         course_id: 1,
@@ -19,6 +19,7 @@ export default function DashBoard(){
 
     return (
         <>
+        <NavBar user_role={user_role}></NavBar>
         <div className="landing-page-grid">
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>
