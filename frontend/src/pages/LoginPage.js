@@ -66,13 +66,13 @@ function LoginPage(){
                     <button className="login-button" type="submit">Login</button>
                     </div>
                 </form>
-                <br></br>
+                
                 <div className="or-line">
                     <div className="hr-or-line"></div>
                     <p>or</p>
                     <div className="hr-or-line"></div>
                 </div>
-                <br></br>
+                
                 <div className="google-button-div">
                 <button className="google-button">
                     <img className="google-image" src={process.env.PUBLIC_URL+"/google.png"} alt="Button Image" />
