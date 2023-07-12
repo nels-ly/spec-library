@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux";
 
 // importing all pages 
 import LoginPage from "./pages/LoginPage";
-import LandingPage from "./pages/LandingPage";
+import DashBoard from "./pages/DashBoard";
 import SignUpPage from "./pages/SignUpPage";
 import CoursePage from "./pages/CoursePage";
 
 // define paths 
 const ROOT = "/";  // Login page
-const LANDING  = "/dashboard";
+const DASHBOARD  = "/dashboard";
 const SIGNUP = "/signup";
 const COURSE_PAGE = "/course";
 
@@ -22,7 +22,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path={ROOT} element={<LoginPage />} />
-                <Route path={LANDING} element={<LandingPage />} />
+                <Route path={DASHBOARD} element={<DashBoard />} />
                 <Route path={SIGNUP} element={<SignUpPage />} />
                 <Route path={COURSE_PAGE} element={<CoursePage/>}/>
             </Routes>

@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import {Link} from "react-router-dom";
 //import { useNavigate } from "react-router-dom";
 //import { useDispatch } from "react-redux";
+import NavBar from "../components/NavBar";
 
 
 function SignUpPage(){
@@ -14,12 +15,16 @@ function SignUpPage(){
             password: event.target.password.value,
         };
 
-        // process loginDetails
+        // process Account Creation Details
+
     }
 
     return (
         <>
         <div className="login-page">
+            <NavBar></NavBar>
+            <br></br>
+            <br></br>
             <div className="login-box">
                 <div className="title">Make an Account with Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
@@ -59,7 +64,7 @@ function SignUpPage(){
                     <div className="link"><Link to="/">Already have an Account?</Link></div>
                     <br></br>
                     <div className="submit-button">
-                    <button className="login-button" type="submit">Login</button>
+                    <button className="login-button" type="submit">Create Account</button>
                     </div>
                 </form>
                 <br></br>

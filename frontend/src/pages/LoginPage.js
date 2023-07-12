@@ -1,12 +1,14 @@
 import { React } from "react";
 import "./LoginPage.css";
 import {Link} from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //import { useDispatch } from "react-redux";
-
+import NavBar from "../components/NavBar";
 
 function LoginPage(){
 
+    const navigate = useNavigate();
+    
     const formSubmit = (event) => {
         event.preventDefault();
         const loginDetails = {
@@ -15,11 +17,15 @@ function LoginPage(){
         };
 
         // process loginDetails
+        navigate("/dashboard");
     }
 
     return (
         <>
         <div className="login-page">
+            <NavBar></NavBar>
+            <br></br>
+            <br></br>
             <div className="login-box">
                 <div className="title">Sign in to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
