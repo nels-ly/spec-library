@@ -1,9 +1,18 @@
 .nav-flex{
     display: flex;
     padding-bottom: 15px;
-    border-bottom: 1px solid green;
+    border-bottom: 2px solid #BDBDBD;
+    align-items: center;
 }
 
 .nav-logo{
     width: 12%;
+}
+
+.user-img{
+    margin-left: auto;
+}
+
+.nav-options{
+    padding: 0 100px 0 100px;
 }
