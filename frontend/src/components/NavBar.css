@@ -1,0 +1,9 @@
+.nav-flex{
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid green;
+}
+
+.nav-logo{
+    width: 12%;
+}
