@@ -75,7 +75,7 @@ class Spectrum_user(AbstractBaseUser):
     username = models.CharField(max_length=255, blank=False, unique=True)
     year = models.IntegerField(blank=True, null=True)
     password = models.CharField(max_length=255, blank=False)
-    dob = models.DateField(blank=True)
+    dob = models.DateField(blank=True, null = True)
     anonymous=models.BooleanField(default=False)
     gender = models.TextChoices("M", "F")
     role = models.OneToOneField(Role,on_delete=models.PROTECT, null=True)
