@@ -17,15 +17,13 @@ function LoginPage(){
         };
 
         // process loginDetails
-        navigate("/dashboard");
+        navigate("/dashboard", { state: { user_role: "student" } });
     }
 
     return (
         <>
         <div className="login-page">
             <NavBar></NavBar>
-            <br></br>
-            <br></br>
             <div className="login-box">
                 <div className="title">Sign in to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>
@@ -68,13 +66,13 @@ function LoginPage(){
                     <button className="login-button" type="submit">Login</button>
                     </div>
                 </form>
-                <br></br>
+                
                 <div className="or-line">
                     <div className="hr-or-line"></div>
                     <p>or</p>
                     <div className="hr-or-line"></div>
                 </div>
-                <br></br>
+                
                 <div className="google-button-div">
                 <button className="google-button">
                     <img className="google-image" src={process.env.PUBLIC_URL+"/google.png"} alt="Button Image" />

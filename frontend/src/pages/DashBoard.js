@@ -2,10 +2,13 @@ import {React} from "react";
 import "./DashBoard.css";
 import CoursePage from "./CoursePage";
 import CourseCard from "../components/CourseCard"
-
+import NavBar from "../components/NavBar";
+import { Link, useLocation} from "react-router-dom";
 
 export default function DashBoard(){
-
+    // sets user_role to tutor by default, but user_role is obtained from Login
+    const location = useLocation();
+    const { user_role } = location.state || { user_role: "tutor" };
     // get Course Details
     const tutor_course = {
         course_id: 1,
@@ -19,11 +22,14 @@ export default function DashBoard(){
 
     return (
         <>
+        <NavBar user_role={user_role}></NavBar>
         <div className="landing-page-grid">
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>
                 <div className="flex-div">
+                    <Link to="/course">
                     <CourseCard imgSrc={tutor_course.course_img} course_title={tutor_course.course_title}></CourseCard>
+                    </Link>
                 </div>
             </div>
             <div className="col-2">
