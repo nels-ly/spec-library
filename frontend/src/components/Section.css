@@ -44,19 +44,18 @@
   
 /* Show the section content when expanded */
 .section-content.expanded {
-  display: block;
   margin-top: -20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 
 .section-icon {
-  width: 24px; /* Adjust the width as needed */
-  height: 24px; /* Adjust the height as needed */
   transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
 }
 
 .section-icon.upward {
   transform: rotate(-90deg); /* Rotate the SVG 180 degrees for upward facing icon */
 }
-
