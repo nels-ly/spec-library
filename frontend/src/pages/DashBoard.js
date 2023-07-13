@@ -31,8 +31,8 @@ export default function DashBoard(){
                     <Link to={{
                         pathname: "/course",
                         state: {
-                            courseId: 1,
-                            courseTitle: "Tutor Resource Library"
+                            course_id: tutor_course.course_id,
+                            course_title: tutor_course.course_title
                         }
                     }}>
                     <CourseCard imgSrc={tutor_course.course_img} course_title={tutor_course.course_title}></CourseCard>
