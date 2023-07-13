@@ -13,6 +13,21 @@
   border-radius: 15px;
 }
 
+.flex-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lesson-count {
+  color: #217AFF;
+  padding-top: 5px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 
 .section.active{
   border-radius: 15px 15px 0 0;
@@ -24,7 +39,6 @@
   display: none;
   overflow: hidden;
   background-color: #eee;
-  ;
   border-radius: 0px 0px 15px 15px;
 }
   
@@ -34,3 +48,15 @@
   margin-top: -20px;
   margin-bottom: 20px;
 }
+
+
+.section-icon {
+  width: 24px; /* Adjust the width as needed */
+  height: 24px; /* Adjust the height as needed */
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.section-icon.upward {
+  transform: rotate(180deg); /* Rotate the SVG 180 degrees for upward facing icon */
+}
+
