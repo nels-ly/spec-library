@@ -10,23 +10,22 @@
   outline: none;
   font-size: 15px;
   margin-bottom: 20px;
+  border-radius: 15px;
 }
 
-  
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.section:hover {
-  background-color: #ccc;
+
+.section.active{
+  border-radius: 15px 15px 0 0;
+
 }
-  
   /* Style the collapsible content. Note: hidden by default */
 .section-content {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
-  
-
+  background-color: #eee;
+  ;
+  border-radius: 0px 0px 15px 15px;
 }
   
 /* Show the section content when expanded */
