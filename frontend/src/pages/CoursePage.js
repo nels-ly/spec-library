@@ -31,7 +31,9 @@ export default function CoursePage() {
 
     const renderListOfSections = (sections) => {
         return sections.map((section, index) => (
+            <>
             <Section key={index} section={section}></Section>
+            </>  
         ));
     }
     
