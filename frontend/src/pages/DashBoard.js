@@ -9,6 +9,7 @@ export default function DashBoard(){
     // sets user_role to tutor by default, but user_role is obtained from Login
     const location = useLocation();
     const { user_role } = location.state || { user_role: "student" };
+    
     // get Course Details
     const tutor_course = {
         course_id: 1,
@@ -27,7 +28,13 @@ export default function DashBoard(){
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>
                 <div className="flex-div">
-                    <Link to="/course">
+                    <Link to={{
+                        pathname: "/course",
+                        state: {
+                            courseId: 1,
+                            courseTitle: "Tutor Resource Library"
+                        }
+                    }}>
                     <CourseCard imgSrc={tutor_course.course_img} course_title={tutor_course.course_title}></CourseCard>
                     </Link>
                 </div>
