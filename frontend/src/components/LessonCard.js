@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function LessonCard(props){
     // lesson for now just contains lesson tile (lessons = array of lesson titles)
+    // props = {lesson_object, user_object}
     const { lesson } = props;
 
     const [isHovered, setIsHovered] = useState(false);
@@ -19,7 +20,13 @@ export default function LessonCard(props){
     return(
         <>
         <Link className="lesson-card" 
-            to="/"
+            to={{
+                pathname: "/lesson",
+                state: {
+                    lesson_object: lesson,
+                    user_object: "placeholder"
+                }
+            }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
