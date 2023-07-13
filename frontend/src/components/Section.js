@@ -36,7 +36,6 @@ export default function Section(props) {
         </div>
       </button>
       <div className={`section-content ${isExpanded ? "expanded" : ""}`}>
-        <p>   </p>
         {renderLessons(section.lessons)}
       </div>
     </>
