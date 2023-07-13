@@ -19,10 +19,9 @@ function LoginPage(){
     
     const formSubmit = (event) => {
         event.preventDefault();
-        const loginDetails = {
-            email: event.target.email.value,
-            password: event.target.password.value,
-        };
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
 
         // process loginDetails
         // query from DB using ^ email and password

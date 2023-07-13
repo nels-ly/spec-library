@@ -16,7 +16,8 @@ class Course{
 export default function DashBoard(){
     // sets user_role to tutor by student, but user_role is obtained from Login
     const location = useLocation();
-    const { user } = location.state || { user: { email: "placeholder", role: "placeholder" } };
+    const { user } = location.state || { user: { email: "placeholder", user_role: "placeholder" } };
+    console.log(location.state);
     
     // create Course object
     const course = new Course( 
@@ -31,7 +32,7 @@ export default function DashBoard(){
 
     return (
         <>
-        <NavBar user_role={user_role}></NavBar>
+        <NavBar user_role={user.user_role}></NavBar>
         <div className="landing-page-grid">
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>
@@ -43,7 +44,7 @@ export default function DashBoard(){
                             course: course
                         }
                     }}>
-                    <CourseCard imgSrc={tutor_course.course_img} course_title={tutor_course.course_title}></CourseCard>
+                    <CourseCard imgSrc={course.course_img} course_title={course.course_title}></CourseCard>
                     </Link>
                 </div>
             </div>
@@ -53,8 +54,8 @@ export default function DashBoard(){
             <div className="col-1">
                 <h1 className="h1-titles">Classes</h1>
                 <div className="flex-div">
-                    <CourseCard imgSrc={tutor_course.course_img} course_title="Year 9 English"></CourseCard>
-                    <CourseCard imgSrc={tutor_course.course_img} course_title="Year 10 Mathematics"></CourseCard>
+                    <CourseCard imgSrc={course.course_img} course_title="Year 9 English"></CourseCard>
+                    <CourseCard imgSrc={course.course_img} course_title="Year 10 Mathematics"></CourseCard>
                 </div>
             </div>
             <div className="col-2">
