@@ -3,6 +3,7 @@ import "./CoursePage.css"
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
 import Section from "../components/Section";
+import { useLocation } from "react-router-dom";
 // Course Page contains all the lessons 
 
 class DemoSection{
@@ -14,7 +15,9 @@ class DemoSection{
 
 
 export default function CoursePage() {
-    
+    const location = useLocation();
+    //  i think we will most likely pass {course_object, user_object} for the state in this page when back end is implemented
+    const {course_id, course_title} = location.state || {}
     const lessons = [];
     for (let i = 1; i < 11; i++) {
         lessons.push("Week "+ i);
