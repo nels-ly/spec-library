@@ -1,23 +1,31 @@
 import {React} from "react";
 import "./DashBoard.css";
-import CoursePage from "./CoursePage";
 import CourseCard from "../components/CourseCard"
 import NavBar from "../components/NavBar";
 import { Link, useLocation} from "react-router-dom";
 
+class Course{
+    constructor(course_id, course_title, course_desc, course_img, date_created){
+        this.course_id = course_id;
+        this.course_title = course_title
+        this.course_desc = course_desc;
+        this.course_img = course_img;
+        this.date_created = date_created;
+    }
+}
 export default function DashBoard(){
-    // sets user_role to tutor by default, but user_role is obtained from Login
+    // sets user_role to tutor by student, but user_role is obtained from Login
     const location = useLocation();
-    const { user_role } = location.state || { user_role: "student" };
+    const { user } = location.state || { user: { email: "placeholder", role: "placeholder" } };
     
-    // get Course Details
-    const tutor_course = {
-        course_id: 1,
-        course_title: "Tutor Resource Library",
-        course_desc: "The Term 3 library for Tutors",
-        course_img: process.env.PUBLIC_URL+"/Spectrum Logo.png",
-        date_created: new Date()
-    };
+    // create Course object
+    const course = new Course( 
+        1, 
+        "Tutor Resource Library", 
+        "The Term 3 library for Tutors",
+        process.env.PUBLIC_URL+"/Spectrum Logo.png",
+        new Date()
+    );
     
 
 
@@ -31,8 +39,8 @@ export default function DashBoard(){
                     <Link to={{
                         pathname: "/course",
                         state: {
-                            course_id: tutor_course.course_id,
-                            course_title: tutor_course.course_title
+                            user: user,
+                            course: course
                         }
                     }}>
                     <CourseCard imgSrc={tutor_course.course_img} course_title={tutor_course.course_title}></CourseCard>
