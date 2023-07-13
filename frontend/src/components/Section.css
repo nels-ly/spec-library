@@ -57,6 +57,6 @@
 }
 
 .section-icon.upward {
-  transform: rotate(180deg); /* Rotate the SVG 180 degrees for upward facing icon */
+  transform: rotate(-90deg); /* Rotate the SVG 180 degrees for upward facing icon */
 }
 
