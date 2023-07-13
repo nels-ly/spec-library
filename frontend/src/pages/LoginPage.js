@@ -5,6 +5,14 @@ import { useNavigate } from "react-router-dom";
 //import { useDispatch } from "react-redux";
 import NavBar from "../components/NavBar";
 
+// can add more fields later
+class User {
+    constructor(email, user_role){
+        this.email = email;
+        this.user_role = user_role;
+    }
+}
+
 function LoginPage(){
 
     const navigate = useNavigate();
@@ -22,9 +30,9 @@ function LoginPage(){
         // pass through user so user details can be used throughout library 
         // e.g. user_role will be used in dashboard 
         // another example user username, email, dob will be used in user details page.
+        const current_user = new User(email, "tutor");
 
-
-        navigate("/dashboard", { state: { user_role: "tutor" } });
+        navigate("/dashboard", { state: { user: current_user } });
     }
 
     return (
