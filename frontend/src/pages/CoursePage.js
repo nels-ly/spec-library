@@ -14,10 +14,9 @@ class DemoSection{
 
 
 export default function CoursePage() {
-
     
     const lessons = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i < 11; i++) {
         lessons.push("Week "+ i);
     }
 
