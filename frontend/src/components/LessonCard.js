@@ -36,7 +36,7 @@ export default function LessonCard(props){
             (<img className="book-icon" src={process.env.PUBLIC_URL+"/fi-rr-book-alt.svg"}></img>)
             }
 
-            <div className="week-text">{lesson}</div>
+            <div className="week-text">{lesson.lesson_title}</div>
         </Link>  
         </>
     )
