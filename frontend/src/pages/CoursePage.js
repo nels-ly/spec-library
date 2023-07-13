@@ -13,14 +13,24 @@ class DemoSection{
     }
 }
 
+class Lesson{
+    constructor(lesson_title, lesson_pdf){
+        this.lesson_title = lesson_title;
+        this.lesson_pdf = lesson_pdf;
+    }
+}
+
 
 export default function CoursePage() {
     const location = useLocation();
-    //  i think we will most likely pass {course_object, user_object} for the state in this page when back end is implemented
-    const {course_id, course_title} = location.state || {}
+    //  passing user and course objects from Dashboard
+    const {user, course} = location.state || {}
+    
     const lessons = [];
     for (let i = 1; i < 11; i++) {
-        lessons.push("Week "+ i);
+        const lesson_title = "Week "+ i;
+        const lesson_pdf = process.env.PUBLIC_URL + "/Spectrum Logo.png";
+        lessons.push(new Lesson(lesson_title, lesson_pdf));
     }
 
     const course_sections = [];
