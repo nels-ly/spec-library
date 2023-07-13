@@ -8,7 +8,7 @@ import { Link, useLocation} from "react-router-dom";
 export default function DashBoard(){
     // sets user_role to tutor by default, but user_role is obtained from Login
     const location = useLocation();
-    const { user_role } = location.state || { user_role: "tutor" };
+    const { user_role } = location.state || { user_role: "student" };
     // get Course Details
     const tutor_course = {
         course_id: 1,

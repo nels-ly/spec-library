@@ -17,7 +17,14 @@ function LoginPage(){
         };
 
         // process loginDetails
-        navigate("/dashboard", { state: { user_role: "student" } });
+        // query from DB using ^ email and password
+        // from query if email and password exist, user exists, so get user
+        // pass through user so user details can be used throughout library 
+        // e.g. user_role will be used in dashboard 
+        // another example user username, email, dob will be used in user details page.
+
+
+        navigate("/dashboard", { state: { user_role: "tutor" } });
     }
 
     return (
