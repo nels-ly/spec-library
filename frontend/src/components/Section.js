@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Section.css";
+import LessonCard from "./LessonCard";
 
 export default function Section(props) {
   const { section } = props;
@@ -8,6 +9,12 @@ export default function Section(props) {
   const toggleSection = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const renderLessons =  (lessons) => {
+    return lessons.map((lesson, index) =>(
+      <LessonCard key={index} lesson={lesson}></LessonCard>
+    ));
+  }
 
   return (
     <>
@@ -29,7 +36,8 @@ export default function Section(props) {
         </div>
       </button>
       <div className={`section-content ${isExpanded ? "expanded" : ""}`}>
-        <p>Lorem ipsum...</p>
+        <p>   </p>
+        {renderLessons(section.lessons)}
       </div>
     </>
   );
