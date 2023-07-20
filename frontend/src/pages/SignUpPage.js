@@ -1,22 +1,31 @@
 import { React } from "react";
 import "./LoginPage.css";
 import {Link} from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
-//import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import NavBar from "../components/NavBar";
+import {signUp} from "../actions/login";
 
 
 function SignUpPage(){
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const formSubmit = (event) => {
         event.preventDefault();
         const loginDetails = {
             email: event.target.email.value,
             password: event.target.password.value,
+            username: event.target.username.value,
+            first_name: event.target.firstName.value,
+            last_name: event.target.lastName.value,
+            dob: event.target.dob.value,
+            gender: event.target.gender.value
         };
 
         // process Account Creation Details
-
+        dispatch(signUp(loginDetails, navigate));
     }
 
     return (

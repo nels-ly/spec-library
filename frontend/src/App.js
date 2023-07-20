@@ -14,7 +14,17 @@ const DASHBOARD  = "/dashboard";
 const SIGNUP = "/signup";
 const COURSE_PAGE = "/course";
 
-export let LoggedIn = true;
+
+export let LoggedIn = false;
+export let profile = null;
+
+export const setLoggedIn = (loggedIn) => {
+    LoggedIn = loggedIn;
+}
+
+export const setProfile = (_profile) => {
+    profile = _profile;
+}
 
 export default function App() {
     return (
