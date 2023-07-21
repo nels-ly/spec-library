@@ -7,12 +7,14 @@ import LoginPage from "./pages/LoginPage";
 import DashBoard from "./pages/DashBoard";
 import SignUpPage from "./pages/SignUpPage";
 import CoursePage from "./pages/CoursePage";
+import SettingsPage from "./pages/SettingsPage";
 
 // define paths 
 const ROOT = "/";  // Login page
 const DASHBOARD  = "/dashboard";
 const SIGNUP = "/signup";
 const COURSE_PAGE = "/course";
+const SETTINGS = "/settings";
 
 
 export let LoggedIn = false;
@@ -35,6 +37,7 @@ export default function App() {
                 <Route path={DASHBOARD} element={<DashBoard />} />
                 <Route path={SIGNUP} element={<SignUpPage />} />
                 <Route path={COURSE_PAGE} element={<CoursePage/>}/>
+                <Route path={SETTINGS} element={<SettingsPage/>}/>
             </Routes>
         </Router>
         </>

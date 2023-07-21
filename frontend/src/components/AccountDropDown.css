@@ -1,0 +1,29 @@
+.account-icon-option{
+    list-style: none;
+    
+}
+
+.account-icon-expanded{
+    display: block
+}
+
+.account-icon-not-expanded{
+    display:none
+}
+
+.account-icon-button {
+    background-color: white;
+    border: none;
+    border-radius:50%;
+    transition: background-color 0.3s ease;
+ 
+}
+
+.account-icon-button:hover {
+    background-color:rgb(196, 196, 240);
+}
+
+#account-icon-label {
+    padding: 0 100px 0 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
