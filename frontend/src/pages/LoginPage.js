@@ -2,8 +2,10 @@ import { React } from "react";
 import "./LoginPage.css";
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-//import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import NavBar from "../components/NavBar";
+import {loginUser} from "../actions/login"
+import {LoggedIn, profile} from "../App";
 
 // can add more fields later
 class User {
@@ -14,8 +16,9 @@ class User {
 }
 
 function LoginPage(){
-
+ 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     
     const formSubmit = (event) => {
         event.preventDefault();
@@ -24,20 +27,13 @@ function LoginPage(){
         const password = event.target.password.value;
 
         // process loginDetails
-        // query from DB using ^ email and password
-        // from query if email and password exist, user exists, so get user
-        // pass through user so user details can be used throughout library 
-        // e.g. user_role will be used in dashboard 
-        // another example user username, email, dob will be used in user details page.
-        const current_user = new User(email, "tutor");
-
-        navigate("/dashboard", { state: { user: current_user } });
-    }
+        dispatch(loginUser(loginDetails, "student", navigate));
+    };
 
     return (
         <>
         <div className="login-page">
-            <NavBar></NavBar>
+            <NavBar></NavBar> 
             <div className="login-box">
                 <div className="title">Sign in to Spectrum</div>
                 <div className="description">Expand your education with Spectrum Library!</div>

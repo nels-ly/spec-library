@@ -4,12 +4,6 @@ from django.core.validators import FileExtensionValidator
 
 
 # Create your models here.
-class Role(models.Model):
-    role = models.CharField(max_length=50)
-    
-    def __str__(self):
-        return self.role
-
 class PDF(models.Model):
     file = models.FileField(unique=True)
     name = models.CharField(max_length=50)
@@ -69,18 +63,29 @@ class Course(models.Model):
         return self.name    
     
 class Spectrum_user(AbstractBaseUser):
-    first_name = models.CharField(max_length=40, blank=False)
-    last_name = models.CharField(max_length=40, blank=False)
+    class Gender(models.TextChoices):
+        MALE = 'M'
+        FEMALE = 'F'
+        NOT_ENTERED = ''
+    
+    class Role(models.TextChoices):
+        STUDENT = 'student'
+        ADMIN = 'admin'
+        TUTOR = 'tutor'
+        
+    first_name = models.CharField(max_length=40, blank=False, null=False)
+    last_name = models.CharField(max_length=40, blank=False, null=False)
     email = models.EmailField(max_length=255, unique=True)
-    username = models.CharField(max_length=255, blank=False, unique=True)
+    username = models.CharField(max_length=255, blank=False, unique=True, null=False)
     year = models.IntegerField(blank=True, null=True)
     password = models.CharField(max_length=255, blank=False)
     dob = models.DateField(blank=True, null = True)
     anonymous=models.BooleanField(default=False)
-    gender = models.TextChoices("M", "F")
-    role = models.OneToOneField(Role,on_delete=models.PROTECT, null=True)
+    gender = models.CharField(choices=Gender.choices, blank=True, default=Gender.NOT_ENTERED)
+    role = models.CharField(choices=Role.choices, default = Role.STUDENT)
     courses = models.ManyToManyField(Course, through='UserCourse', through_fields=("user", "course"))
-    
+    profile_pic = models.ImageField(default='spec-library/spec-library/frontend/public/User Icon.png')
+    last_updated = models.DateTimeField(auto_now=True)
     USERNAME_FIELD = 'username'
     
     def __str__(self):

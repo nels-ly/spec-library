@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import AccountDropDown from "./AccountDropDown";
 
 export default function NavBar({user_role = ""}){
     const nav_options = [];
@@ -25,9 +26,10 @@ export default function NavBar({user_role = ""}){
                 <div className="nav-options" key={index}>{option}</div>
             ))}
             {user_role !== "" && (
-                <img className="user-img" src={process.env.PUBLIC_URL+"/fi-rs-user.svg"}></img>
+                <AccountDropDown></AccountDropDown> 
             )}
         </div>
+        
         <br></br>
         <br></br>
         </>
