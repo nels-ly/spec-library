@@ -3,6 +3,7 @@ import "./CoursePage.css"
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
 import Section from "../components/Section";
+import { useLocation } from "react-router-dom";
 // Course Page contains all the lessons 
 
 class DemoSection{
@@ -12,13 +13,24 @@ class DemoSection{
     }
 }
 
+class Lesson{
+    constructor(lesson_title, lesson_pdf){
+        this.lesson_title = lesson_title;
+        this.lesson_pdf = lesson_pdf;
+    }
+}
+
 
 export default function CoursePage() {
-
+    const location = useLocation();
+    //  passing user and course objects from Dashboard
+    const {user, course} = location.state || {}
     
     const lessons = [];
-    for (let i = 0; i < 10; i++) {
-        lessons.push("Week "+ i);
+    for (let i = 1; i < 11; i++) {
+        const lesson_title = "Week "+ i;
+        const lesson_pdf = process.env.PUBLIC_URL + "/Spectrum Logo.png";
+        lessons.push(new Lesson(lesson_title, lesson_pdf));
     }
 
     const course_sections = [];
@@ -31,7 +43,9 @@ export default function CoursePage() {
 
     const renderListOfSections = (sections) => {
         return sections.map((section, index) => (
+            <>
             <Section key={index} section={section}></Section>
+            </>  
         ));
     }
     

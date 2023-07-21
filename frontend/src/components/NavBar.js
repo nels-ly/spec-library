@@ -26,7 +26,9 @@ export default function NavBar({user_role = ""}){
                 <div className="nav-options" key={index}>{option}</div>
             ))}
             {user_role !== "" && (
+                <div className="account-img">
                 <AccountDropDown></AccountDropDown> 
+                </div>
             )}
         </div>
         

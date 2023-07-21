@@ -1,32 +1,61 @@
 /* Style the button that is used to open and close the collapsible content */
 .section {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active,
-  .section:hover {
-    background-color: #ccc;
-  }
-  
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.flex-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lesson-count {
+  color: #217AFF;
+  padding-top: 5px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.section.active{
+  border-radius: 15px 15px 0 0;
+
+}
   /* Style the collapsible content. Note: hidden by default */
-  .section-content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
+.section-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #eee;
+  border-radius: 0px 0px 15px 15px;
+}
   
-  /* Show the section content when expanded */
-  .section-content.expanded {
-    display: block;
-  }
-  
+/* Show the section content when expanded */
+.section-content.expanded {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+
+.section-icon {
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.section-icon.upward {
+  transform: rotate(-90deg); /* Rotate the SVG 180 degrees for upward facing icon */
+}

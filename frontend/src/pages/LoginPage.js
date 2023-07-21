@@ -7,6 +7,14 @@ import NavBar from "../components/NavBar";
 import {loginUser} from "../actions/login"
 import {LoggedIn, profile} from "../App";
 
+// can add more fields later
+class User {
+    constructor(email, user_role){
+        this.email = email;
+        this.user_role = user_role;
+    }
+}
+
 function LoginPage(){
  
     const navigate = useNavigate();
@@ -14,10 +22,9 @@ function LoginPage(){
     
     const formSubmit = (event) => {
         event.preventDefault();
-        const loginDetails = {
-            email: event.target.email.value,
-            password: event.target.password.value,
-        };
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
 
         // process loginDetails
         dispatch(loginUser(loginDetails, "student", navigate));
