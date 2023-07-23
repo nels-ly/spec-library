@@ -15,7 +15,8 @@ export default function AccountDropDown({username = ""}) {
     <>
 
       <div className="account-dropdown" onClick={changeToggle} >
-        <button type="button" className="account-button">
+        <label id="username" for="user">{username}</label>
+        <button name="user" type="button" className="account-button">
           <img src={process.env.PUBLIC_URL + '/User Icon.svg'} alt="User Icon" />
 
         </button>

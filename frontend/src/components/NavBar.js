@@ -17,9 +17,7 @@ export default function NavBar({user_role = "student",  username = ""}){
         nav_options["Manage Courses"] = "/manage-course";
         nav_options["Manage Users"] = "#";
     }
-    nav_options["Dashboard"] = "/dashboard";
-        nav_options["Manage Courses"] = "/manage-course";
-        nav_options["Manage Users"] = "#";
+    
     
     console.log(Object.entries(nav_options));
  

@@ -10,11 +10,14 @@ import {useState, useDispatch, useSelector} from "react-redux";
 export default function ManageCoursePage() {
     const dispatch = useDispatch();
     
+    const renderListOfCourses = () => {
+        return //all currently published courses from db in the form of course cards
+    }
 
     return (
     <> 
         <NavBar></NavBar>
-        
+        {renderListOfCourses()}
         <div className="course-card">
             <Link className="course-card-item" to="/add-course"> 
                 <svg width="299" height="309" viewBox="0 0 299 309" fill="none" xmlns="http://www.w3.org/2000/svg">

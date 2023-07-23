@@ -7,7 +7,7 @@ export default function CourseCard({imgSrc, course_title}){
             <img src={imgSrc} alt="Course">
             </img>
             <div className="container">
-                <h4>{course_title}</h4>
+                <p className="courseTitle">{course_title}</p>
             </div>
         </div>
         

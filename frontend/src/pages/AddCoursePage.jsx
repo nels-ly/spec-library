@@ -30,10 +30,10 @@ export default function AddCoursePage() {
         <br></br>
         <form onSubmit={courseUpload}>
         <div className="grid-course-field">
-            <label className="h2-headers" for="courseName" required>Course Name</label>
-            <input id="courseName" type="text" className="course-input-field" placeholder="Enter Course Name"></input>
-            <label className="h2-headers" for="coursePhoto" required>Course Image</label>
-            <input id="coursePhoto" type="file" className="course-photo-input"></input>
+            <label className="h2-headers" for="courseName">Course Name</label>
+            <input required id="courseName" type="text" className="course-input-field" placeholder="Enter Course Name"></input>
+            <label className="h2-headers" for="coursePhoto">Course Image</label>
+            <input required id="coursePhoto" type="file" className="course-photo-input"></input>
             <br></br>
             <button type="submit" className="uploadBtn">UPLOAD COURSE</button>
         </div>
