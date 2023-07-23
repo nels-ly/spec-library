@@ -1,4 +1,63 @@
 #add-course-header {
-    font-weight: normal;
+    color: #242424;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     
+}
+
+
+.main-div{
+    margin-left: 25px;
+}
+
+.grid-course-field{
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.course-input-field {
+    grid-column-start: 2;
+    font-size: 15px;
+    width: 50%;
+    border: none;
+    outline: none;
+    height: 150%;
+    border-radius: 10px;
+    background: #D9DBDE;
+    text-indent: 10px;
+}
+
+.h2-headers {
+    color: #000;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.course-photo-input {
+    grid-column-start: 2;
+    align-self: center;
+}
+
+
+.uploadBtn {
+    color: white;
+    padding: 1%;
+    font-weight: 600;
+    border: none;
+    font-size: 20px;
+    border-radius: 15px;
+    background: #00CB45;
+    grid-column-start: 2;
+    margin-left: auto;
+    margin-right: 5%;
 }
