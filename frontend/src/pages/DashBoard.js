@@ -1,9 +1,10 @@
-import {React} from "react";
+import {React, useEffect, useState} from "react";
 import "./DashBoard.css";
 import CourseCard from "../components/CourseCard"
 import NavBar from "../components/NavBar";
 import { Link, useLocation} from "react-router-dom";
 import {LoggedIn, profile} from "../App";
+import Cookies from 'js-cookie';
 
 class Course{
     constructor(course_id, course_title, course_desc, course_img, date_created){
@@ -17,9 +18,16 @@ class Course{
 export default function DashBoard(){
     // sets user_role to tutor by student, but user_role is obtained from Login
     const location = useLocation();
-    const { user } = location.state || { user: { email: "placeholder", user_role: "placeholder" } };
+    const [user, setUser] = useState(false);
+    let cookieValue = null;
+
     console.log(location.state);
-    
+    useEffect(() => {
+
+        cookieValue = Cookies.get('ple');
+        setUser(JSON.parse(cookieValue));
+        
+    }, [cookieValue])
     // create Course object
     const course = new Course( 
         1, 
@@ -30,10 +38,9 @@ export default function DashBoard(){
     );
     
 
-
     return (
         <>
-        <NavBar user_role={user.user_role}></NavBar>
+        <NavBar user_role={user.user_role} username={user.username}></NavBar>
         <div className="landing-page-grid">
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>

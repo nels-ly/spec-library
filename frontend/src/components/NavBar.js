@@ -4,7 +4,7 @@ import AccountDropDown from "./AccountDropDown";
 import {profile} from "../App";
 import {NavLink} from "react-router-dom";
 
-export default function NavBar({user_role = "student"}){
+export default function NavBar({user_role = "student",  username = ""}){
 
     const nav_options = {};
     if (user_role === "tutor"){
@@ -36,7 +36,7 @@ export default function NavBar({user_role = "student"}){
             ))}
             {user_role !== "" && (
                 <div className="account-img">
-                <AccountDropDown></AccountDropDown> 
+                <AccountDropDown username= {username}></AccountDropDown> 
                 </div>
             )}
         </div>
