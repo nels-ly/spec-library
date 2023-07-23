@@ -25,7 +25,7 @@ export default function DashBoard(){
         1, 
         "Tutor Resource Library", 
         "The Term 3 library for Tutors",
-        process.env.PUBLIC_URL+"/Spectrum Logo.png",
+        process.env.PUBLIC_URL+"/temp-course-icon.svg",
         new Date()
     );
     
@@ -44,7 +44,7 @@ export default function DashBoard(){
                             user: user,
                             course: course
                         }
-                    }}>
+                    }} className="course-card">
                     <CourseCard imgSrc={course.course_img} course_title={course.course_title}></CourseCard>
                     </Link>
                 </div>
@@ -64,7 +64,6 @@ export default function DashBoard(){
             </div>
             
         </div>
-        
         
         
         </>
