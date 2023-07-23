@@ -9,6 +9,8 @@ import SignUpPage from "./pages/SignUpPage";
 import CoursePage from "./pages/CoursePage";
 import LessonPage from "./pages/LessonPage";
 import SettingsPage from "./pages/SettingsPage";
+import ManageCoursePage from "./pages/ManageCoursePage";
+import AddCoursePage from "./pages/AddCoursePage";
 
 // define paths 
 const ROOT = "/";  // Login page
@@ -17,6 +19,8 @@ const SIGNUP = "/signup";
 const COURSE_PAGE = "/course";
 const LESSON_PAGE = "/lesson"
 const SETTINGS = "/settings";
+const MANAGE_COURSE = '/manage-course'
+const ADD_COURSE = '/add-course';
 
 
 export let LoggedIn = false;
@@ -41,6 +45,8 @@ export default function App() {
                 <Route path={COURSE_PAGE} element={<CoursePage/>}/>
                 <Route path={LESSON_PAGE} element={<LessonPage/>}/>
                 <Route path={SETTINGS} element={<SettingsPage/>}/>
+                <Route path={MANAGE_COURSE} element={<ManageCoursePage/>}/>
+                <Route path={ADD_COURSE} element = {<AddCoursePage/>}/>
             </Routes>
         </Router>
         </>

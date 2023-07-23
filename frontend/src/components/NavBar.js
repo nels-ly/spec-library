@@ -1,19 +1,28 @@
 import React from "react";
 import "./NavBar.css";
 import AccountDropDown from "./AccountDropDown";
+import {profile} from "../App";
+import {NavLink} from "react-router-dom";
 
-export default function NavBar({user_role = ""}){
-    const nav_options = [];
-    if (user_role == "tutor"){
-        nav_options.push("Dashboard");
-        nav_options.push("Login to MySpectrum")
-    } else if (user_role == "student") {
-        nav_options.push("Dashboard") 
-    } else if (user_role == "admin") {
-        nav_options.push("Dashboard");
-        nav_options.push("Manage Courses");
-        nav_options.push("Manage Users")
+export default function NavBar({user_role = "student"}){
+
+    const nav_options = {};
+    if (user_role === "tutor"){
+        nav_options["Dashboard"] = "/dashboard";
+        nav_options["Login to MySpectrum"] = "#";
+    } else if (user_role === "student") {
+        nav_options["Dashboard"] = "/dashboard";
+    } else if (user_role === "admin") {
+        nav_options["Dashboard"] = "/dashboard";
+        nav_options["Manage Courses"] = "#";
+        nav_options["Manage Users"] = "#";
     }
+    nav_options["Dashboard"] = "/dashboard";
+        nav_options["Manage Courses"] = "#";
+        nav_options["Manage Users"] = "#";
+    
+    console.log(Object.entries(nav_options));
+ 
     // else user_role == "" means user is not logged in
 
     return (
@@ -22,8 +31,8 @@ export default function NavBar({user_role = ""}){
             <img className="nav-logo" src={process.env.PUBLIC_URL+"/Spectrum Logo.png"} alt="Spectrum Logo">
             </img>
 
-            {nav_options.map((option, index) => (
-                <div className="nav-options" key={index}>{option}</div>
+            {Object.entries(nav_options).map((option, index) => (
+                <NavLink className="nav-options" to={option[1]} key={index}>{option[0]}</NavLink>
             ))}
             {user_role !== "" && (
                 <div className="account-img">

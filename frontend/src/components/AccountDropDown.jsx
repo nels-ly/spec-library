@@ -13,13 +13,13 @@ export default function AccountDropDown(props) {
 
   return (
     <>
-      <div className="account-dropdown" onMouseEnter={changeToggle} onMouseLeave={changeToggle}>
+      <div className="account-dropdown" onClick={changeToggle} onclick={changeToggle}>
         <button type="button" className="account-button">
           <img src={process.env.PUBLIC_URL + '/fi-rs-user.svg'} alt="User Icon" />
         </button>
         {isToggled && (
           <div className="dropdown-content">
-            <Link className="dropdown-link" to="#">Account Settings</Link>
+            <Link className="dropdown-link" to="/settings">Account Settings</Link>
             <Link className="dropdown-link" to="#">Log Out</Link>
           </div>
         )}

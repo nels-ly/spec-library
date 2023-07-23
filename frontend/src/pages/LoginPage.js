@@ -25,6 +25,10 @@ function LoginPage(){
 
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const loginDetails = {
+            email: email,
+            password: password
+        }
 
         // process loginDetails
         dispatch(loginUser(loginDetails, "student", navigate));

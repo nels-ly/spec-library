@@ -9,7 +9,7 @@
     right: 0;
   }
   
-  .account-dropdown:hover .dropdown-content {
+  .account-dropdown .dropdown-content {
     display: block;
   }
   
@@ -22,7 +22,7 @@
   }
   
   .dropdown-link:hover {
-    background-color: #f1f1f1; 
+    background-color: #597381; 
   }
 
 
