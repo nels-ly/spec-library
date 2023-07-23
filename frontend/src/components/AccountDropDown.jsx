@@ -15,7 +15,7 @@ export default function AccountDropDown(props) {
     <>
       <div className="account-dropdown" onClick={changeToggle} onclick={changeToggle}>
         <button type="button" className="account-button">
-          <img src={process.env.PUBLIC_URL + '/fi-rs-user.svg'} alt="User Icon" />
+          <img src={process.env.PUBLIC_URL + '/User Icon.svg'} alt="User Icon" />
         </button>
         {isToggled && (
           <div className="dropdown-content">
