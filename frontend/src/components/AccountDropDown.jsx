@@ -13,10 +13,11 @@ export default function AccountDropDown({username = ""}) {
 
   return (
     <>
+
       <div className="account-dropdown" onClick={changeToggle} >
-        <label for="account-icon" id="username">{username}</label>
-        <button type="button" className="account-button" name="account-icon">
-          <img src={process.env.PUBLIC_URL + '/fi-rs-user.svg'} alt="User Icon" />
+        <button type="button" className="account-button">
+          <img src={process.env.PUBLIC_URL + '/User Icon.svg'} alt="User Icon" />
+
         </button>
         {isToggled && (
           <div className="dropdown-content">
