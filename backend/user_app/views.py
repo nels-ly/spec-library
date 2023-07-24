@@ -5,6 +5,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from rest_framework.status import HTTP_404_NOT_FOUND,HTTP_401_UNAUTHORIZED, HTTP_200_OK, HTTP_409_CONFLICT
 from rest_framework.authentication import SessionAuthentication
 from rest_framework import permissions
+from django.contrib.auth import logout
 
 
 
@@ -58,6 +59,21 @@ def sign_up(request):
             return Response('User already exists', status = HTTP_409_CONFLICT)
         
         return Response("Account created")
+    
+    except Exception as e:
+        raise e
+    
+
+@api_view(['POST'])
+@permission_classes([permissions.AllowAny])
+def logout(request):
+    
+    try: 
+  
+        request.session.flush()
+        
+        return Response({"message": "Logged out successfully"})
+        
     
     except Exception as e:
         raise e
