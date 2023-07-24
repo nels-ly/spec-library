@@ -27,7 +27,7 @@ function LoginPage(){
         if (authenticated) {
             navigate('/dashboard');
         }
-    }) 
+    }, []); 
     
     
     const formSubmit = (event) => {
@@ -44,7 +44,7 @@ function LoginPage(){
         dispatch(loginUser(loginDetails, "student", navigate));
     };
 
-    return (!authenticated ? <></> : 
+    return (authenticated ? <></> : 
         <>
             <div className="login-page">
                 <NavBar></NavBar> 

@@ -36,11 +36,11 @@ export default function DashBoard(){
         process.env.PUBLIC_URL+"/temp-course-icon.svg",
         new Date()
     );
-    
+ 
 
     return (
         <>
-        <NavBar user_role={user.user_role} username={user.username}></NavBar>
+        <NavBar user_role={user.role} username={user.username}></NavBar>
         <div className="landing-page-grid">
             <div className="col-1">
                 <h1 className="h1-titles">Courses</h1>

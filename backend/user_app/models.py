@@ -58,6 +58,8 @@ class Course(models.Model):
     description = models.TextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     sections = models.ForeignKey(Section, on_delete=models.PROTECT, related_name='sections')
+    image = models.ImageField(blank=False, null=False, upload_to='files/course_images', default='files/course_images/image-tutor.png', 
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png', 'jpeg'])])
         
     def __str__(self):
         return self.name    
@@ -90,6 +92,8 @@ class Spectrum_user(AbstractBaseUser):
     
     def __str__(self):
         return f'{self.first_name} {self.last_name}'    
+    
+    
 
 class UserCourse(models.Model):
     user = models.ForeignKey(Spectrum_user, on_delete=models.CASCADE)

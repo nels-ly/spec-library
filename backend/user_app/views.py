@@ -5,7 +5,6 @@ from django.contrib.auth.hashers import make_password, check_password
 from rest_framework.status import HTTP_404_NOT_FOUND,HTTP_401_UNAUTHORIZED, HTTP_200_OK, HTTP_409_CONFLICT
 from rest_framework.authentication import SessionAuthentication
 from rest_framework import permissions
-from django.contrib.auth import logout
 
 
 

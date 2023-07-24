@@ -6,9 +6,12 @@ import { Link, useLocation} from "react-router-dom";
 import {LoggedIn, profile} from "../App";
 import {useState, useDispatch, useSelector} from "react-redux";
 import "./AddCoursePage.css";
+import { AddCourse } from "../actions/course";
 
 
 export default function AddCoursePage() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const courseUpload = (event) => {
         event.preventDefault();
@@ -20,6 +23,9 @@ export default function AddCoursePage() {
             courseName: courseName,
             coursePhoto: coursePhoto
         }
+
+        dispatch(AddCourse(courseDetails, navigate));
+
     }
 
     return (
