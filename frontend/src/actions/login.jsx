@@ -33,5 +33,17 @@ export const signUp = (signUpDetails, navigate) => async (dispatch) => {
         alert(`${error.message}`);
     }
 
+}
 
+export const logout = (navigate) => async (dispatch) => {
+    try {
+        const payload = await api.logout();
+        console.log(payload);
+        dispatch({type: "LOGOUT", payload: payload});
+        navigate("/");
+    }
+    catch (error) {
+        console.log(error.message);
+        alert(`${error.message}`);
+    }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // importing all pages 
@@ -39,7 +39,7 @@ export default function App() {
         <>
         <Router>
             <Routes>
-                <Route path={ROOT} element={<LoginPage />} />
+                <Route path={ROOT} element={<LoginPage/>} />
                 <Route path={DASHBOARD} element={<DashBoard />} />
                 <Route path={SIGNUP} element={<SignUpPage />} />
                 <Route path={COURSE_PAGE} element={<CoursePage/>}/>

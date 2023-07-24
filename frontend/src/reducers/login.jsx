@@ -12,6 +12,15 @@ const loginReducer = (state = null , action) => {
         
         case 'SIGNUP':
             return action.payload
+        
+        case 'LOGOUT':
+            const cookieNames = Object.keys(Cookies.get());
+                cookieNames.forEach((cookieName) => {
+                    Cookies.remove(cookieName);
+                });
+               
+
+                return action.payload;
 
         default: 
             return state;   

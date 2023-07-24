@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import './AccountDropDown.css';
 import { Link } from 'react-router-dom';
+import {logout} from '../actions/login';
+import {useDispatch} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function AccountDropDown({username = ""}) {
+  
+  const dispatch = useDispatch();
   const [isToggled, setIsToggled] = useState(false);
-
+  const navigate = useNavigate();
+  
   const changeToggle = () => {
     setIsToggled(!isToggled);
   };
 
-  
+  const logoutUser = () => {
+    dispatch(logout(navigate));
+  }
 
   return (
     <>
@@ -27,7 +35,7 @@ export default function AccountDropDown({username = ""}) {
               <br className="separator" ></br>
               </div> 
             
-            <Link className="dropdown-link" to="#">Log Out</Link>
+            <button className="dropdown-link" type="button" onClick={logoutUser}>Log Out</button>
           </div>
         )}
       </div>

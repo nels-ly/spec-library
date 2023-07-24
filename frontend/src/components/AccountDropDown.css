@@ -27,6 +27,12 @@
     color: #333; 
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  button.dropdown-link {
+    border: none;
+    background-color: hsl(0, 0%, 98%);
+    
+  }
   
   .dropdown-link:hover {
     background-color: #597381; 
